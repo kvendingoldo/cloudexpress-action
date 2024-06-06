@@ -1,0 +1,38 @@
+name: 'Cloud Express workflow'
+description: ''
+author: 'kvendingoldo'
+
+branding:
+  icon: 'play-circle'
+  color: 'green'
+
+inputs:
+  base_url:
+    description: ''
+    required: false
+    default: 'https://api.cloudexpress.app'
+  timeout:
+    description: ''
+    required: false
+    default: '600'
+  project_id:
+    description: ''
+    required: true
+    default: ''
+  component_id:
+    description: ''
+    required: true
+    default: ''
+  new_version:
+    description: ''
+    required: true
+    default: ''
+
+outputs:
+  status:
+    description: ''
+
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  #image: 'docker://kvendingoldo/semver-action:v1.20.4'
