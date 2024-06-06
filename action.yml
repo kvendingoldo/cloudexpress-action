@@ -23,7 +23,7 @@ inputs:
     description: ''
     required: true
     default: ''
-  new_version:
+  new_image:
     description: ''
     required: true
     default: ''

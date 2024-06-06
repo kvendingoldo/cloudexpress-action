@@ -4,14 +4,14 @@ BASE_URL="${INPUT_BASE_URL}"
 TIMEOUT="${INPUT_TIMEOUT}"
 PROJECT_ID="${INPUT_PROJECT_ID}"
 COMPONENT_ID="${INPUT_COMPONENT_ID}"
-NEW_VERSION="${INPUT_NEW_VERSION}"
+NEW_IMAGE="${INPUT_NEW_IMAGE}"
 CHECK_INTERVAL=1
 
 # Get current component data
 DATA=$(curl -H "X-Service-Account-Id: 007" -H "X-Profile-Id: 007" -XGET "${BASE_URL}/components/${PROJECT_ID}/${COMPONENT_ID}/describe")
 
 # Replace docker image to a new one
-UPDATED_DATA=$(echo ${DATA} | jq  ".dockerImage=\"${NEW_VERSION}\"")
+UPDATED_DATA=$(echo ${DATA} | jq  ".dockerImage=\"${NEW_IMAGE}\"")
 
 # Trigger deploy with updated body
 curl \
